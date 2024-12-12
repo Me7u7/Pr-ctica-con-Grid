@@ -1,0 +1,122 @@
+:root{
+    --main-radius: 10px;
+    --main-padding: 20px;
+    /*Usé :root porque es más específico, en lugar de *{} que puede
+    ocasionar problemas conforme el código crece*/
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr 0.9fr 0.8fr;
+    grid-template-areas: 
+        "Play Play Play Play"
+        "Cursos Info Info Info"
+        "Cursos Frase Frase Frase"
+        "Cursos Tec Deporte Arte"
+        "Cursos  Precio Precio Contacto ";
+    grid-gap: 0.2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size:20px;
+    color: #004d40;
+
+}
+
+#Play{
+    background: rgb(197, 237, 224);
+    grid-area: Play;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+    text-align: center;
+    font-size:xx-large;
+
+}
+#Info{
+    background: rgb(223, 182, 226);
+    grid-area: Info;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+
+#Cursos{
+    background: paleturquoise;
+    grid-area:Cursos;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+    text-align: justify;
+}
+#Tec{
+    background: paleturquoise;
+    grid-area: Tec;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+#Deporte{
+    background: paleturquoise;
+    grid-area: Deporte;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+#Arte{
+    background: paleturquoise;
+    grid-area: Arte;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+
+#Frase{
+    background: rgb(181, 182, 255);
+    grid-area: Frase;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+    text-align: center;
+
+}
+#Contacto {
+    background: rgb(214, 255, 181);
+    grid-area: Contacto;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+    justify-content: center;
+
+}
+
+#Precio{
+    background: rgb(214, 255, 181);
+    grid-area: Precio;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+#texto{
+    justify-content: center;
+}
+
+/*Esta parte del código es para ajustar el diseño del contenido 
+a un dispositivo móvil, lo busqué en Youtube :D */
+@media only screen and (max-width:550px){
+    .container{
+        font-size:12px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr 0.9fr 0.8fr;
+        grid-template-areas: 
+        "Play"
+        "Cursos"
+        "Info"
+        "Frase"
+        "Tec"
+        "Deporte"
+        "Arte"
+        "Precio"
+        "Contacto";
+    }
+}
